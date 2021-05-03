@@ -1,0 +1,41 @@
+package com.example.website;
+import android.os.Bundle;
+import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.website.R;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+/**
+ * Website - Java
+ **/
+public class Website extends AppCompatActivity {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.l);
+        TextView textView = findViewById(R.id.header);
+        textView.setText("Mobile App Developer | Valentin Ahrend");
+        try {
+            InputStreamReader isr = new InputStreamReader(getAssets().open("flutter"));
+            BufferedReader br = new BufferedReader(isr);        
+            StringBuilder sb = new StringBuilder();
+            String line;         
+            while ((line = br.readLine()) != null){
+                sb.append(line);
+            }            
+            runFlutterCode(sb.toString());           
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private native void runFlutterCode(String code);
+}
+
+
+
