@@ -55136,7 +55136,7 @@ this.eq()}}
 K.uB.prototype={
 bl:function(){return new K.Kd(C.u)}}
 K.Kd.prototype={
-bx:function(){$.mn().Hf("rls.txt").aB(0,new K.a1e(this),t.P)
+bx:function(){$.mn().Hf("assets/rls").aB(0,new K.a1e(this),t.P)
 this.bR()},
 K8:function(){var s=this.f=H.a(this.e.split(" "),t.s)
 if(!!s.fixed$length)H.d(P.E("removeWhere"))
